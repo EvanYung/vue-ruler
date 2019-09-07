@@ -1,0 +1,27 @@
+.triangle(@_width, @height, @color,  @direction) {
+  @width: @_width / 2;
+  @color-border-style: @height solid @color;
+  @transparent-border-style: @width solid transparent;
+  height: 0;
+  width: 0;
+  & when (@direction = up) {
+    border-bottom: @color-border-style;
+    border-left: @transparent-border-style;
+    border-right: @transparent-border-style;
+  }
+  & when (@direction = right) {
+    border-left: @color-border-style;
+    border-top: @transparent-border-style;
+    border-bottom: @transparent-border-style;
+  }
+  & when (@direction = down) {
+    border-top: @color-border-style;
+    border-left: @transparent-border-style;
+    border-right: @transparent-border-style;
+  }
+  & when (@direction = left) {
+    border-right: @color-border-style;
+    border-top: @transparent-border-style;
+    border-bottom: @transparent-border-style;
+  }
+}
